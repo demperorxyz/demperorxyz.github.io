@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elixir - Bootstrap Template</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <style>
+        /* โหมดสว่าง (ค่าเริ่มต้น) */
+        body {
+            background-color: white;
+            color: black;
+        }
+        .navbar {
+            background-color: white;
+        }
+
+        /* โหมดมืด */
+        .dark-mode {
+            background-color: #121212 !important;
+            color: white !important;
+        }
+        .dark-mode .navbar {
+            background-color: #222 !important;
+        }
+
+        /* ปรับสีตัวหนังสือทั้งหมดให้ตรงกับธีม */
+        .dark-mode a, .dark-mode p, .dark-mode h1, .dark-mode h2, .dark-mode h3, 
+        .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+            color: white !important;
+        }
+        a, p, h1, h2, h3, h4, h5, h6 {
+            color: black !important;
+        }
+
+        /* คงสีของ Our Portfolio และ Get Started */
+        .get-started-btn {
+            background-color: black !important;
+            color: white !important;
+        }
+        .our-portfolio-btn {
+            background-color: white !important;
+            color: black !important;
+        }
+        .dark-mode .get-started-btn {
+            background-color: black !important;
+            color: white !important;
+        }
+        .dark-mode .our-portfolio-btn {
+            background-color: white !important;
+            color: black !important;
+        }
+        /* Footer Default (Light Mode) */
+        footer {
+            background-color: white !important;
+            color: black !important;
+        }
+
+        /* Footer in Dark Mode */
+        .dark-mode footer {
+            background-color: #000000 !important;
+            color: white !important;
+        }
+
+        /* ปรับสีของ icon ให้ตรงกับ theme */
+        .dark-mode .social-icons a {
+            color: white !important;
+        }
+        .about-section {
+            text-align: left;
+            margin-right: auto;
+        }
+
+        /* ปรับสีของ dropdown menu ให้ตรงกับ theme */
+        .dropdown-menu {
+            background-color: white;
+            color: black;
+        }
+        .dark-mode .dropdown-menu {
+            background-color: #222;
+            color: white;
+        }
+        .dropdown-item {
+            color: black;
+        }
+        .dark-mode .dropdown-item {
+            color: white;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="./index.html#hero">
+            <img src="./assets/images/ตัวเต็ม.png" alt="" width="80" height="200">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto" style="color: black;">
+                <li class="nav-item"><a class="nav-link" href="#hero" data-lang data-lang-en="Home" data-lang-th="หน้าแรก" style="color: black;">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about" data-lang data-lang-en="About" data-lang-th="เกี่ยวกับ" style="color: black;">About</a></li>
+                
+                <!-- Skills Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="skillsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-lang data-lang-en="Skills" data-lang-th="ความสามารถ" style="color: black;">Skills</a>
+                    <ul class="dropdown-menu" aria-labelledby="skillsDropdown">
+                        <li><a class="dropdown-item" href="./photoshop.html" style="color: black;"><img src="./assets/images/ps.webp" width="20"> Adobe Photoshop</a></li>
+                        <li><a class="dropdown-item" href="./ai.html" style="color: black;"><img src="./assets/images/ai.png" width="20"> Adobe Illustrator</a></li>
+                        <li><a class="dropdown-item" href="./ae.html" style="color: black;"><img src="./assets/images/ae.png" width="20"> Adobe After Effects</a></li>
+                        <li><a class="dropdown-item" href="./excel.html" style="color: black;"><img src="./assets/images/excel.jfif" width="20"> Microsoft Excel</a></li>
+                        
+                        <li><a class="dropdown-item" href="./sketchup.html" style="color: black;"><img src="./assets/images/sp.jfif" width="20"> SketchUp</a></li>
+                        <li><a class="dropdown-item" href="./vscode.html" style="color: black;"><img src="./assets/images/vs.png" width="20"> Visual Studio</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="./activity.html" data-lang data-lang-en="Activity" data-lang-th="กิจกรรม" style="color: black;">Activity</a></li>
+                <li class="nav-item"><a class="nav-link" href="./portfolio.html" data-lang data-lang-en="Portfolio" data-lang-th="ผลงาน" style="color: black;">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="./resume.html" data-lang data-lang-en="resume" data-lang-th="เรซุเม่" style="color: black;">resume</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact" data-lang data-lang-en="Contact" data-lang-th="ติดต่อ" style="color: black;">Contact</a></li>
+            </ul>
+            <button id="language-toggle" class="btn btn-dark ms-2">EN/TH</button>
+            <button id="theme-toggle" class="btn btn-dark ms-2">Toggle Theme</button>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .navbar-nav .nav-link.active {
+        font-weight: bold;
+        color: black !important;
+    }
+
+    .dropdown-menu .dropdown-item.active {
+        background-color: #f8f9fa;
+        font-weight: bold;
+        color: black !important;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // โหลดค่าเริ่มต้นของธีมจาก localStorage
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+
+        // ฟังก์ชันเปลี่ยนภาษา
+        document.getElementById("language-toggle").addEventListener("click", function() {
+            let elements = document.querySelectorAll("[data-lang]");
+            let currentLang = document.documentElement.lang;
+
+            if (currentLang === "en") {
+                document.documentElement.lang = "th";
+                elements.forEach(el => el.textContent = el.dataset.langTh);
+            } else {
+                document.documentElement.lang = "en";
+                elements.forEach(el => el.textContent = el.dataset.langEn);
+            }
+        });
+
+        // ฟังก์ชันเปลี่ยนธีม
+        document.getElementById("theme-toggle").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+        });
+
+        // ฟังก์ชันเพื่อแสดงว่าลิงก์ไหนถูกเลือก
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function() {
+                dropdownItems.forEach(dropdown => dropdown.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    });
+</script>
+
+
+        <!-- HERO -->
+    <section id="hero" class="min-vh-100 d-flex align-items-center text-center">
+        <div class="container position-relative z-1">
+            <div class="row">
+                <div class="col-12">
+                    <h1 data-aos="fade-left" class="text-uppercase text-white fw-bold display-1 text-shadow" data-lang data-lang-en="Welcome to KSVR" data-lang-th="ยินดีต้อนรับสู่ KSVR">Welcome to KSVR</h1>
+                    <h5 class="text-white mt-3 mb-4 text-shadow" data-aos="fade-right" data-lang data-lang-en="THIS IS PART OF THE WEB PROGRAMMING COURSE." data-lang-th="นี่เป็นส่วนหนึ่งของวิชาการเว็บโปรแกรม">THIS IS PART OF THE WEB PROGRAMMING COURSE.</h5>
+                    <div data-aos="fade-up" data-aos-delay="50">
+                        <a href="#skills" class="btn get-started-btn ms-2" data-lang data-lang-en="Get Started" data-lang-th="เริ่มต้น">Get Started</a>
+                        <a href="./portfolio.html" class="btn our-portfolio-btn ms-2" data-lang data-lang-en="Our Portfolio" data-lang-th="ผลงานของผม">Our Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<style>
+#hero {
+    background-image: url('./assets/images/bg1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* ปรับค่าความจางที่นี่ */
+    z-index: 0;
+}
+
+.container.position-relative {
+    position: relative;
+    z-index: 1;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+</style>
+
+
+<!-- ABOUT -->
+<section id="about" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="50">
+                <div class="section-title">
+                    <h1 class="display-3 fw-bold text-dark" data-lang data-lang-en="About Me" data-lang-th="เกี่ยวกับฉัน">About Me</h1>
+                    <div class="line"></div>
+                    <p class="text-dark fs-4" data-lang 
+                       data-lang-en="If you want to know more about me, let's take a look." 
+                       data-lang-th="ถ้าคุณอยากรู้จักผมมากขึ้นเราไปดูกันได้เลย">
+                        Passionate about crafting digital experiences that make an impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-lg-6" data-aos="fade-down" data-aos-delay="50">
+                <img src="./assets/images/m.jpg" alt="About Me" class="img-fluid rounded">
+            </div>
+            <div data-aos="fade-down" data-aos-delay="150" class="col-lg-5">
+               <p> <h1 class="fw-bold text-dark display-4" data-lang data-lang-en="Who am I" data-lang-th="ฉันคือใคร">Who am I</h1> </p>
+
+                <p class="mt-3 mb-4 text-dark fs-4" data-lang 
+                   data-lang-en="Hello, I am Sippapas Kijsrivirot, 21 years old. 
+                   I am currently studying in my third year at Srinakharinwirot University. 
+                   I am now looking for internship opportunities to develop my skills and potential, 
+                   and to gain experience for my future career."
+                   data-lang-th="สวัสดีครับผม นายสิปปภาส กิจศรีวิโรฒ อายุ 21 ปี
+                   กำลังศึกษาอยู่ชั้นปีที่ 3 มหาวิทยาลัยศรีนครินทรวิโรฒ
+                   ตอนนี้กำลังมองหาโอกาสในการฝึกงานเพื่อพัฒนา ทักษะเเละศักยภาพของผมเเละเก็บเกี่ยวประสบการณ์เพื่อมาใช้สำหรับการทำงานในอนาคต ">
+                   Hello, I am Sippapas Kijsrivirot, 21 years old...
+                </p>
+
+                <div class="d-flex pt-4 mb-4">
+                    <div class="iconbox me-4">
+                        <img src="./assets/images/name.jfif" alt="Name" class="img-fluid" width="120">
+                    </div>
+                    <div>
+                        <h4 class="fw-bold text-dark" data-lang data-lang-en="Name - Surname" data-lang-th="ชื่อ - นามสกุล">Name - Surname</h4>
+                        <p class="text-dark fs-5" data-lang data-lang-en="Sippapas Kijsrivirot (M)" data-lang-th="สิปปภาส กิจศรีวิโรฒ (M)">Sippapas Kijsrivirot (M)</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-4">
+                    <div class="iconbox me-4">
+                        <img src="./assets/images/BD.jfif" alt="Birth Date" class="img-fluid" width="120">
+                    </div>
+                    <div>
+                        <h4 class="fw-bold text-dark" data-lang data-lang-en="Birth date" data-lang-th="วันเกิด">Birth date</h4>
+                        <p class="text-dark fs-5">18 / 09 / 2003</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-4">
+                    <div class="iconbox me-4">
+                        <img src="./assets/images/Citizen.jpg" alt="Citizen" class="img-fluid" width="120">
+                    </div>
+                    <div>
+                        <h4 class="fw-bold text-dark" data-lang data-lang-en="Citizen" data-lang-th="สัญชาติ">Citizen</h4>
+                        <p class="text-dark fs-5" data-lang data-lang-en="Thai" data-lang-th="ไทย">Thai</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-4">
+                    <div class="iconbox me-4">
+                        <img src="./assets/images/Gen.jfif" alt="Gender" class="img-fluid" width="120">
+                    </div>
+                    <div>
+                        <h4 class="fw-bold text-dark" data-lang data-lang-en="Gender" data-lang-th="เพศ">Gender</h4>
+                        <p class="text-dark fs-5" data-lang data-lang-en="Male" data-lang-th="ชาย">Male</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- SKILL SECTION -->
+<section id="skills" class="section-padding bg-dark text-light">
+    <div class="container text-center">
+        <h2 class="mb-5 text-uppercase display-3 fw-bold text-white" data-aos="fade-up">SKILLS</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="150">
+                <a href="./photoshop.html" target="_blank" class="skill-icon">
+                    <img src="./assets/images/ps.webp" alt="Adobe Photoshop" class="img-fluid mb-3" width="80">
+                </a>
+                <h5 class="text-white">Adobe Photoshop</h5>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="250">
+                <a href="./ai.html" target="_blank" class="skill-icon">
+                    <img src="./assets/images/ai.png" alt="Adobe Illustrator" class="img-fluid mb-3" width="80">
+                </a>
+                <h5 class="text-white">Adobe Illustrator</h5>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="350">
+                <a href="./ae.html" target="_blank" class="skill-icon">
+                    <img src="./assets/images/ae.png" alt="Adobe After Effects" class="img-fluid mb-3" width="80">
+                </a>
+                <h5 class="text-white">Adobe After Effects</h5>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="450">
+                <a href="./excel.html" target="_blank" class="skill-icon">
+                    <img src="./assets/images/excel.jfif" alt="Microsoft Excel" class="img-fluid mb-3" width="80">
+                </a>
+                <h5 class="text-white">Microsoft Excel</h5>
+            </div>
+            
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="650">
+                <a href="./sketchup.html" target="_blank" class="skill-icon">
+                    <img src="./assets/images/sp.jfif" alt="SketchUp" class="img-fluid mb-3" width="80">
+                </a>
+                <h5 class="text-white">SketchUp</h5>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="750">
+                <a href="./vscode.html" target="_blank" class="skill-icon">
+                    <img src="./assets/images/vs.png" alt="Visual Studio" class="img-fluid mb-3" width="80">
+                </a>
+                <h5 class="text-white">Visual Studio</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .skill-icon img {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .skill-icon:hover img {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    }
+</style>
+
+
+
+
+    
+
+<!-- FOOTER -->
+<section id="contact" >
+    <footer class="footer text-dark py-5">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-lg-3 col-sm-6 text-center text-lg-start">
+                        <a href="#"><img src="./assets/images/ตัวเต็ม.png" alt="Logo" class="mb-3"></a>
+                        <div class="line mb-3" style="width: 50px; height: 3px;"></div>
+                        Thank you for watching to the end.
+                        <div class="social-icons d-flex gap-3 justify-content-left">
+                            <a href="https://www.instagram.com/demperorxyz/" class="fs-4"><i class="ri-instagram-fill"></i></a>
+                            <a href="https://www.facebook.com/sippapas.kijsrivirot/" class="fs-4"><i class="ri-facebook-fill"></i></a>
+                            <a href="https://www.youtube.com/@04demperor22" class="fs-4"><i class="ri-youtube-fill"></i></a>
+                            <a href="https://www.google.com/maps/place/47+%E0%B8%8B%E0%B8%AD%E0%B8%A2+%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B3%E0%B9%81%E0%B8%AB%E0%B8%87+30%2F1+%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%81+%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B0%E0%B8%9B%E0%B8%B4+%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3+10240/@13.7646174,100.6309176,15z/data=!4m5!3m4!1s0x311d61eee6088613:0x2f81054a2a33025b!8m2!3d13.7599204!4d100.6346271?entry=ttu&g_ep=EgoyMDI1MDIyNS4wIKXMDSoASAFQAw%3D%3D" class="fs-4"><i class="ri-map-pin-line"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-3">SKILLS</h5>
+                        <div class="line mb-3" style="width: 50px; height: 3px;"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="#">UI Design</a></li>
+                            <li><a href="#">UX Design</a></li>
+                            <li><a href="#">Branding</a></li>
+                            <li><a href="#">Logo Designing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6 about-section">
+                        <h5 class="mb-3" data-lang data-lang-en="ABOUT" data-lang-th="เกี่ยวกับ">ABOUT</h5>
+                        <div class="line mb-3" style="width: 50px; height: 3px;"></div>
+                        <ul class="list-unstyled">
+                            <li data-lang data-lang-en="I can do UI/UX, graphics, and motion graphics." data-lang-th="ผมสามารถทำ UI/UX, กราฟิก และโมชั่นกราฟิก">I can do UI/UX, graphics, and motion graphics.</li>
+                            <li data-lang data-lang-en="I am proficient in using Photoshop, Illustrator, After Effects, and SketchUp." data-lang-th="เเละใช้โปรแกรมอย่าง Photoshop, Illustrator, After Effects และ SketchUp ได้ดี">I am proficient in using Photoshop, Illustrator, After Effects, and SketchUp.</li>
+                            <li data-lang data-lang-en="I am a dedicated worker and can work well in a team." data-lang-th="ผมเป็นคนตั้งใจทำงาน เเละสามารถทำงานเป็นทีมได้ดี">I am a dedicated worker and can work well in a team.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-3">CONTACT</h5>
+                        <div class="line mb-3" style="width: 50px; height: 3px;"></div>
+                        <ul class="list-unstyled">
+                            <li><i class="ri-map-pin-line"></i> 45 รามคำแหง 30/1 หัวหมาก บางกะปิ กรุงเทพ 10240</li>
+                            <li><i class="ri-phone-fill"></i> 083-828-9808</li>
+                            <li><i class="ri-mail-fill"></i> <a href="mailto:paspas951@gmail.com">paspas951@gmail.com</a></li>
+                            <li><i class="ri-line-fill"></i> Line: demperor.pas</li>
+                            <li><i class="ri-instagram-fill"></i> <a href="https://www.instagram.com/demperorxyz/">Instagram: demperorxyz</a></li>
+                            <li><i class="ri-facebook-fill"></i> <a href="https://www.facebook.com/sippapas.kijsrivirot/">Facebook: Sippapas M Kijsrivirot</a></li>
+                        </ul>
+                    </div>
+                    
+    </footer>
+</section>
+
+<style>
+    .footer {
+        background: none !important;
+        color: black;
+    }
+    .footer a {
+        color: black;
+    }
+    .footer .line {
+        background-color: black;
+    }
+    .footer .border-top {
+        border-color: black !important;
+    }
+
+    /* Dark mode */
+    .dark-mode .footer {
+        background-color: #000000 !important;
+        color: white !important;
+    }
+    .dark-mode .footer a {
+        color: white !important;
+    }
+    .dark-mode .footer .line {
+        background-color: white !important;
+    }
+    .dark-mode .footer .border-top {
+        border-color: white !important;
+    }
+    .dark-mode .social-icons a {
+        color: white !important;
+    }
+    .footer {
+        background: none !important;
+        color: black;
+    }
+    .footer a, .footer li, .footer i {
+        color: black;
+    }
+    .footer .line {
+        background-color: black;
+    }
+    .footer .border-top {
+        border-color: black !important;
+    }
+
+    /* Dark mode */
+    .dark-mode .footer {
+        background-color: #000000 !important;
+        color: white !important;
+    }
+    .dark-mode .footer a,
+    .dark-mode .footer li,
+    .dark-mode .footer i {
+        color: white !important;
+    }
+    .dark-mode .footer .line {
+        background-color: white !important;
+    }
+    .dark-mode .footer .border-top {
+        border-color: white !important;
+    }
+    .dark-mode .social-icons a {
+        color: white !important;
+    }
+</style>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
