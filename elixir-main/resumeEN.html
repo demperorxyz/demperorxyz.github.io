@@ -109,24 +109,23 @@
     <!-- Viewer Container -->
     <div class="viewer-container" id="viewer">
         <div id="image-viewer" class="image-container">
-            <img src="./assets/images/resume th/1.png" alt="resumeth 1">
-            <img src="./assets/images/resume th/2.png" alt="resumeth 2">
-            <img src="./assets/images/resume th/3.png" alt="resumeth 3">
+            <img src="./assets/images/resumern/1.png" alt="resumern 1">
+            <img src="./assets/images/resumern/2.png" alt="resumern 2">
         </div>
     </div>
 
     <script>
         function downloadPDF() {
-            const pdfUrl = "Professional CV Resume (1).pdf";
+            const pdfUrl = "./Professional CV Resume EN.pdf";
 
             if (isIOS()) {
-                // iOS ใช้ window.location.href เพื่อบังคับให้ดาวน์โหลด
+                // iOS uses window.location.href to force download
                 window.location.href = pdfUrl;
             } else {
-                // PC และ Android ใช้วิธีปกติ
+                // PC and Android use normal download approach
                 const a = document.createElement("a");
                 a.href = pdfUrl;
-                a.download = "Professional CV Resume (1).pdf";
+                a.download = "Professional CV Resume EN.pdf";
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
