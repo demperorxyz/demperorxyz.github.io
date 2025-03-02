@@ -29,12 +29,6 @@
             border-radius: 10px;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         .image-container img {
             width: 100%;
             height: auto;
@@ -114,42 +108,25 @@
     
     <!-- Viewer Container -->
     <div class="viewer-container" id="viewer">
-        <iframe id="pdf-viewer" src="./Professional CV Resume EN.pdf" allowfullscreen></iframe>
-        <div id="image-viewer" class="image-container" style="display: none;"></div>
+        <div id="image-viewer" class="image-container">
+            <img src="./assets/images/resume th/1.png" alt="resumeth 1">
+            <img src="./assets/images/resume th/2.png" alt="resumeth 2">
+            <img src="./assets/images/resume th/3.png" alt="resumeth 3">
+        </div>
     </div>
 
     <script>
-        function isIOS() {
-            return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-        }
-
-        window.onload = function() {
-            if (isIOS()) {
-                document.getElementById("pdf-viewer").style.display = "none";
-                document.getElementById("image-viewer").style.display = "block";
-
-                let imageContainer = document.getElementById("image-viewer");
-                for (let i = 1; i <= 2; i++) {
-                    let img = new Image();
-                    img.src = `./assets/images/resumern/${i}.png`;
-                    img.alt = `Portfolio Page ${i}`;
-                    img.loading = "lazy";  // Load images only when visible
-                    imageContainer.appendChild(img);
-                }
-            }
-        };
-
         function downloadPDF() {
-            const pdfUrl = "./Professional CV Resume EN.pdf";
+            const pdfUrl = "Professional CV Resume (1).pdf";
 
             if (isIOS()) {
-                // iOS uses window.location.href to force download
+                // iOS ใช้ window.location.href เพื่อบังคับให้ดาวน์โหลด
                 window.location.href = pdfUrl;
             } else {
-                // PC and Android use normal download approach
+                // PC และ Android ใช้วิธีปกติ
                 const a = document.createElement("a");
                 a.href = pdfUrl;
-                a.download = "Professional CV Resume EN.pdf";
+                a.download = "Professional CV Resume (1).pdf";
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
