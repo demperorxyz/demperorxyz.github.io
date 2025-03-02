@@ -29,12 +29,6 @@
             border-radius: 10px;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         .image-container img {
             width: 100%;
             height: auto;
@@ -114,31 +108,14 @@
     
     <!-- Viewer Container -->
     <div class="viewer-container" id="viewer">
-        <iframe id="pdf-viewer" src="Professional CV Resume (1).pdf" allowfullscreen></iframe>
-        <div id="image-viewer" class="image-container" style="display: none;"></div>
+        <div id="image-viewer" class="image-container">
+            <img src="./assets/images/resume th/1.png" alt="resumeth 1">
+            <img src="./assets/images/resume th/2.png" alt="resumeth 2">
+            <img src="./assets/images/resume th/3.png" alt="resumeth 3">
+        </div>
     </div>
 
     <script>
-        function isIOS() {
-            return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-        }
-
-        window.onload = function() {
-            if (isIOS()) {
-                document.getElementById("pdf-viewer").style.display = "none";
-                document.getElementById("image-viewer").style.display = "block";
-
-                let imageContainer = document.getElementById("image-viewer");
-                for (let i = 1; i <= 3; i++) {
-                    let img = new Image();
-                    img.src = `./assets/images/resume th${i}.png`;
-                    img.alt = `Portfolio Page ${i}`;
-                    img.loading = "lazy";  // โหลดรูปเฉพาะเวลามองเห็น
-                    imageContainer.appendChild(img);
-                }
-            }
-        };
-
         function downloadPDF() {
             const pdfUrl = "Professional CV Resume (1).pdf";
 
