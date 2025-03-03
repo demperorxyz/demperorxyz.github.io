@@ -19,20 +19,13 @@
         }
 
         .viewer-container {
-            width: 90%;
-            max-width: 900px;
-            height: 85vh;
+            width: 100%;
+            height: 100vh;
             overflow-y: auto;
             text-align: center;
             background: #000;
             padding: 10px;
             border-radius: 10px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
         }
 
         .image-container img {
@@ -102,6 +95,29 @@
                 font-size: 12px;
             }
         }
+        .button-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 1000; /* ทำให้ปุ่มอยู่ด้านหน้า */
+}
+
+.viewer-container {
+    width: 100%;
+    min-height: 100vh; /* ปรับให้แน่ใจว่าเห็นภาพครบ */
+    overflow: auto; /* ให้สามารถเลื่อนได้ */
+    text-align: center;
+    background: #000;
+    padding: 10px;
+    border-radius: 10px;
+}
+
     </style>
 </head>
 <body>
@@ -113,39 +129,32 @@
     
     <!-- Viewer Container -->
     <div class="viewer-container" id="viewer">
-        <iframe id="pdf-viewer" src="portfolio.pdf#toolbar=0" allowfullscreen></iframe>
-        <div id="image-viewer" class="image-container" style="display: none;"></div>
+        <div id="image-viewer" class="image-container">
+            <img src="./assets/images/prot/1.png" alt="Portfolio Page 1">
+            <img src="./assets/images/prot/2.png" alt="Portfolio Page 2">
+            <img src="./assets/images/prot/3.png" alt="Portfolio Page 3">
+            <img src="./assets/images/prot/4.png" alt="Portfolio Page 4">
+            <img src="./assets/images/prot/5.png" alt="Portfolio Page 5">
+            <img src="./assets/images/prot/6.png" alt="Portfolio Page 6">
+            <img src="./assets/images/prot/7.png" alt="Portfolio Page 7">
+            <img src="./assets/images/prot/8.png" alt="Portfolio Page 8">
+            <img src="./assets/images/prot/9.png" alt="Portfolio Page 9">
+            <img src="./assets/images/prot/10.png" alt="Portfolio Page 10">
+            <img src="./assets/images/prot/11.png" alt="Portfolio Page 11">
+            <img src="./assets/images/prot/12.png" alt="Portfolio Page 12">
+            <img src="./assets/images/prot/13.png" alt="Portfolio Page 13">
+        </div>
     </div>
 
     <script>
-        function isIOS() {
-            return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-        }
-
-        window.onload = function() {
-            if (isIOS()) {
-                document.getElementById("pdf-viewer").style.display = "none";
-                document.getElementById("image-viewer").style.display = "block";
-
-                let imageContainer = document.getElementById("image-viewer");
-                for (let i = 1; i <= 13; i++) {
-                    let img = new Image();
-                    img.src = `./assets/images/prot/${i}.png`;
-                    img.alt = `Portfolio Page ${i}`;
-                    img.loading = "lazy";  // โหลดรูปเฉพาะเวลามองเห็น
-                    imageContainer.appendChild(img);
-                }
-            }
-        };
-
         function downloadPDF() {
             const pdfUrl = "portfolio.pdf";
 
             if (isIOS()) {
-                // iOS ใช้ window.location.href เพื่อบังคับให้ดาวน์โหลด
+                // iOS uses window.location.href to force download
                 window.location.href = pdfUrl;
             } else {
-                // PC และ Android ใช้วิธีปกติ
+                // PC and Android use normal download approach
                 const a = document.createElement("a");
                 a.href = pdfUrl;
                 a.download = "portfolio.pdf";
@@ -154,8 +163,13 @@
                 document.body.removeChild(a);
             }
         }
+
         function goBack() {
             window.history.back();
+        }
+
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
         }
     </script>
 
